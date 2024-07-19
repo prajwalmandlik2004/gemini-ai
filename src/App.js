@@ -11,10 +11,10 @@ const App = () => {
         'Explain the significance of quantum computing in simple terms'
     ];
 
-    const surprise = () => {
-        const randomValue = surpriseOptions[Math.floor(Math.random() * surpriseOptions.length)];
-        setValue(randomValue);
-    };
+    // const surprise = () => {
+    //     const randomValue = surpriseOptions[Math.floor(Math.random() * surpriseOptions.length)];
+    //     setValue(randomValue);
+    // };
 
     const getResponse = async () => {
         if (!value) {
