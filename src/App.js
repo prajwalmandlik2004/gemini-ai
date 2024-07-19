@@ -34,7 +34,7 @@ const App = () => {
                 }
             };
 
-            const response = await fetch("http://localhost:8000/gemini", options);
+            const response = await fetch("https://gemini-pro-ai.netlify.app/gemini", options);
             const data = await response.text();
 
             setChatHistory(oldChatHistory => [...oldChatHistory, {
