@@ -1,13 +1,172 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: 90vw;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    animation: borderAnimation 3s infinite;
+    box-shadow: 0 0 10px 2px lightgreen;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 50px;
+    background: -webkit-linear-gradient(lightgreen, rgb(37, 39, 38));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 200;
+    color: #9a9a9a;
+}
+
+.suggestions {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.suggestion-box {
+    background-color: #e0e0e0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px;
+    flex: 1 1 calc(25% - 20px);
+    border: 2px solid transparent;
+    animation: borderAnimation 3s infinite;
+    box-shadow: 0 0 10px 2px lightgreen;
+}
+
+.suggestion-box:hover {
+    background-color: #d0d0d0;
+    transform: scale(1.05);
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    border: 1px solid #cacaca;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-container input {
+    width: 80%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+}
+
+.input-container button {
+    width: 20%;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+}
+
+.input-container button:active {
+    background-color: #357ABD;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.search-result {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.answer {
+    padding: 15px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.answer.user {
+    background-color: #e6f7ff;
+}
+
+.answer.model {
+    background-color: #f0e6ff;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: transparent;
+        box-shadow: 0 0 10px 2px transparent;
+    }
+    50% {
+        border-color: rgb(60, 232, 60);
+        box-shadow: 0 0 10px 2px lightgreen;
+    }
+
+    100% {
+        border-color: transparent;
+        box-shadow: 0 0 10px 2px transparent;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .suggestions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .suggestion-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .input-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .input-container input {
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .input-container button {
+        width: 100%;
+        height: 40px;
+        border-radius: 0 0 8px 8px;
+    }
 }
