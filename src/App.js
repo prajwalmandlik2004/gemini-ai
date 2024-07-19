@@ -34,7 +34,7 @@ const App = () => {
                 }
             };
 
-            const response = await fetch("https://gemini-pro-ai.netlify.app/gemini", options);
+            const response = await fetch("https://gemini-ai-v0sm.onrender.com/gemini", options);
             const data = await response.text();
 
             setChatHistory(oldChatHistory => [...oldChatHistory, {
@@ -95,4 +95,5 @@ const App = () => {
 };
 
 export default App;
+
 
